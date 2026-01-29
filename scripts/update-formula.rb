@@ -113,12 +113,12 @@ class FormulaUpdater
       if name.include?('darwin-amd64')
         assets['amd64'] = {
           url: asset['browser_download_url'],
-          sha256: asset['digest']
+          sha256: extract_sha256(asset['digest'])
         }
       elsif name.include?('darwin-arm64')
         assets['arm64'] = {
           url: asset['browser_download_url'],
-          sha256: asset['digest']
+          sha256: extract_sha256(asset['digest'])
         }
       end
     end
@@ -160,6 +160,13 @@ class FormulaUpdater
     @formula_content = @formula_content[0...start_idx] + block_content + @formula_content[end_idx + 1..]
 
     puts "🔄 Updated #{block_name} block"
+  end
+
+  def extract_sha256(digest)
+    # GitHub API returns digest in format "sha256:hash", extract just the hash
+    return nil if digest.nil?
+
+    digest.sub(/^sha256:/, '')
   end
 
   def find_block_end(start_idx)
