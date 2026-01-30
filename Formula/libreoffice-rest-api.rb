@@ -4,7 +4,7 @@
 class LibreofficeRestApi < Formula
   desc "A lightweight document conversion service based on Go that encapsulates Libre Office command line capabilities through REST API."
   homepage "https://github.com/funnyzak/libreoffice-rest-api"
-  version "0.1.0"
+  version "0.1.2"
   license "AGPL-3.0"
 
   livecheck do
@@ -15,13 +15,13 @@ class LibreofficeRestApi < Formula
   depends_on :macos
 
   on_intel do
-    url "https://github.com/funnyzak/libreoffice-rest-api/releases/download/0.1.0/libreoffice-rest-api-darwin-amd64.tar.gz"
-    sha256 "36e5b321495787124a681ceea9f5ea2ef40d6f6d4f72d1fe27a4237a54c860f0"
+    url "https://github.com/funnyzak/libreoffice-rest-api/releases/download/0.1.2/libreoffice-rest-api-darwin-amd64.tar.gz"
+    sha256 "3f63b209754430d3314b093db9e77952297981066cbb2fa48f940d0dbcbb1698"
   end
 
   on_arm do
-    url "https://github.com/funnyzak/libreoffice-rest-api/releases/download/0.1.0/libreoffice-rest-api-darwin-arm64.tar.gz"
-    sha256 "35fa2e53d609f06c87427d5c1225f303752bb82f2a3c5dbd906838ecbf03e3f8"
+    url "https://github.com/funnyzak/libreoffice-rest-api/releases/download/0.1.2/libreoffice-rest-api-darwin-arm64.tar.gz"
+    sha256 "061f849bf0d748f0aa658b2f135a141a976bb582621fd8711cd788df2631d268"
   end
 
   def install
